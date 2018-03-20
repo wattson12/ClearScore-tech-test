@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		20911CE2F008745E79923862 /* Pods_ClearScoreTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC528E9EA8D39897A2FB52 /* Pods_ClearScoreTask.framework */; };
 		2207C0592061162F0003D828 /* Observable+ConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207C0582061162F0003D828 /* Observable+ConversionTests.swift */; };
+		2207C05B2061197B0003D828 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207C05A2061197B0003D828 /* State.swift */; };
+		2207C05D20611A870003D828 /* StateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207C05C20611A870003D828 /* StateTests.swift */; };
 		225F0687206102D700E625DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F0686206102D700E625DA /* AppDelegate.swift */; };
 		225F068E206102D700E625DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225F068D206102D700E625DA /* Assets.xcassets */; };
 		225F0691206102D700E625DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225F068F206102D700E625DA /* LaunchScreen.storyboard */; };
@@ -57,6 +59,8 @@
 		1582ECADDB0D1C76541EBB6B /* Pods-ClearScoreTaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearScoreTaskTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClearScoreTaskTests/Pods-ClearScoreTaskTests.release.xcconfig"; sourceTree = "<group>"; };
 		2063B6ECF7B1099F4663A9DA /* Pods-ClearScoreTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearScoreTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClearScoreTask/Pods-ClearScoreTask.debug.xcconfig"; sourceTree = "<group>"; };
 		2207C0582061162F0003D828 /* Observable+ConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+ConversionTests.swift"; sourceTree = "<group>"; };
+		2207C05A2061197B0003D828 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		2207C05C20611A870003D828 /* StateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTests.swift; sourceTree = "<group>"; };
 		225F0683206102D700E625DA /* ClearScoreTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearScoreTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		225F0686206102D700E625DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		225F068D206102D700E625DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -252,6 +256,7 @@
 				225F06D92061145E00E625DA /* DataProvider.swift */,
 				225F06DB2061147E00E625DA /* URL+Creation.swift */,
 				225F06E02061152F00E625DA /* Observable+Conversion.swift */,
+				2207C05A2061197B0003D828 /* State.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 			children = (
 				225F06DE206114D600E625DA /* URL+CreationTests.swift */,
 				2207C0582061162F0003D828 /* Observable+ConversionTests.swift */,
+				2207C05C20611A870003D828 /* StateTests.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -609,6 +615,7 @@
 				225F06C0206108FE00E625DA /* CreditScoreViewController.swift in Sources */,
 				225F06C220610CF400E625DA /* BaseView.swift in Sources */,
 				225F06C720610F0500E625DA /* CreditReportInfo.swift in Sources */,
+				2207C05B2061197B0003D828 /* State.swift in Sources */,
 				225F0687206102D700E625DA /* AppDelegate.swift in Sources */,
 				225F06C520610EE300E625DA /* APIResult.swift in Sources */,
 				225F06B9206106A700E625DA /* Coordinator.swift in Sources */,
@@ -620,6 +627,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				225F06CA20610F7600E625DA /* CreditReportInfoTests.swift in Sources */,
+				2207C05D20611A870003D828 /* StateTests.swift in Sources */,
 				225F06DF206114D600E625DA /* URL+CreationTests.swift in Sources */,
 				225F06CF20610FAD00E625DA /* TestFixtureHelpers.swift in Sources */,
 				225F069C206102D800E625DA /* ClearScoreTaskTests.swift in Sources */,

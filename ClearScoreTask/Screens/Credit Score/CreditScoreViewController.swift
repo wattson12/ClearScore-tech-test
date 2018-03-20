@@ -30,13 +30,6 @@ extension NSLayoutConstraint {
     }
 }
 
-enum State<T> {
-    case initial
-    case loading
-    case success(T)
-    case error(Error)
-}
-
 final class CreditScoreViewModel {
 
     let disposeBag = DisposeBag()
@@ -55,8 +48,8 @@ final class CreditScoreViewModel {
         dataProvider
             .fetchData(fromURL: .mockCredit)
             .convertToCreditReportInfo()
-            .map { State<CreditReportInfo>.success($0) }
-            .catchError { return Observable.just(State<CreditReportInfo>.error($0)) }
+            .wrapInState() //convert to a state type so we can bind to the credit report relay
+            .observeOn(MainScheduler.instance) //UI triggers are based off of the creditReport relay so move back to main thread here
             .bind(to: creditReport)
             .disposed(by: disposeBag)
     }
@@ -92,6 +85,7 @@ class CreditScoreViewController: BaseViewController {
         viewModel
             .creditReport
             .subscribe(onNext: { state in
+                print(Thread.current)
                 print(state)
             })
             .disposed(by: disposeBag)
