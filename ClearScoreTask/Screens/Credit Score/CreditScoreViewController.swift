@@ -65,6 +65,8 @@ class CreditScoreViewController: BaseViewController {
             .creditReport
             .subscribe(onNext: { [unowned self] state in
                 switch state {
+                case .loading:
+                    self.setViewToLoadingState()
                 case .success(let creditReportInfo):
                     self.configureView(withCreditReportInfo: creditReportInfo)
                 default:
@@ -81,9 +83,15 @@ class CreditScoreViewController: BaseViewController {
             .disposed(by: disposeBag)
     }
 
+    private func setViewToLoadingState() {
+        creditScoreView.viewState = .loading
+    }
+
     private func configureView(withCreditReportInfo creditReportInfo: CreditReportInfo) {
-        creditScoreView.creditScoreLabel.text = creditReportInfo.score.description
+
+        let scoreString = NSAttributedString(string: creditReportInfo.score.description)
         let progress = CGFloat(creditReportInfo.score) / CGFloat(creditReportInfo.maxScoreValue - creditReportInfo.minScoreValue)
-        creditScoreView.innerGradientView.setProgress(progress, animated: true)
+
+        creditScoreView.viewState = .loaded(score: scoreString, progress: progress)
     }
 }

@@ -10,14 +10,37 @@ import UIKit
 
 final class CreditScoreView: BaseView {
 
-    let outerBorderView = CircularBorderView(borderColor: .outerCircle)
-    let innerGradientView = GradientCircleView(colors: [.black, .red, .blue, .green])
+    //internal state used to represent the possible view states
+    //used to avoid needing to pass any specific model values to the view
+    enum ViewState {
+        case initial
+        case loading
+        case loaded(score: NSAttributedString, progress: CGFloat)
+        case error(error: NSAttributedString)
+    }
 
-    let creditScoreLabel: UILabel = {
+    var viewState: ViewState = .initial {
+        didSet {
+            configureForCurrentViewState()
+        }
+    }
+
+    private let outerBorderView = CircularBorderView(borderColor: .outerCircle)
+    private let innerGradientView = GradientCircleView(colors: [.black, .red, .blue, .green])
+
+    private let creditScoreLabel: UILabel = {
         let creditScoreLabel = UILabel()
         creditScoreLabel.translatesAutoresizingMaskIntoConstraints = false
         creditScoreLabel.textAlignment = .center
         return creditScoreLabel
+    }()
+
+    private let activityIndicatorView: UIActivityIndicatorView = {
+        let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
+        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicatorView.color = .loadingActivityIndicatorView
+        activityIndicatorView.hidesWhenStopped = true
+        return activityIndicatorView
     }()
 
     override init() {
@@ -28,6 +51,7 @@ final class CreditScoreView: BaseView {
         self.addSubview(outerBorderView)
         self.addSubview(innerGradientView)
         self.addSubview(creditScoreLabel)
+        self.addSubview(activityIndicatorView)
 
         //outer view is centered in the screen, square (/circular once corner radius is applied), and within the size of the view
         NSLayoutConstraint.activate([
@@ -57,5 +81,34 @@ final class CreditScoreView: BaseView {
             creditScoreLabel.centerYAnchor.constraint(equalTo: outerBorderView.centerYAnchor),
             creditScoreLabel.widthAnchor.constraint(lessThanOrEqualTo: outerBorderView.widthAnchor, multiplier: 0.8)
         ])
+
+        //activity indicator view pinned to center as well
+        NSLayoutConstraint.activate([
+            activityIndicatorView.centerXAnchor.constraint(equalTo: outerBorderView.centerXAnchor),
+            activityIndicatorView.centerYAnchor.constraint(equalTo: outerBorderView.centerYAnchor)
+        ])
+    }
+
+    private func configureForCurrentViewState() {
+        switch viewState {
+        case .initial: break //handled on initialisation
+
+        case .loading:
+            activityIndicatorView.startAnimating()
+            creditScoreLabel.isHidden = true
+
+        case .loaded(let scoreString, let progress):
+            //remove spinner and restore view
+            activityIndicatorView.stopAnimating()
+            creditScoreLabel.isHidden = false
+
+            //then set loaded values
+            creditScoreLabel.attributedText = scoreString
+            innerGradientView.setProgress(progress, animated: true)
+            
+        case .error:
+            activityIndicatorView.stopAnimating()
+            break //TODO: handling
+        }
     }
 }

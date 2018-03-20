@@ -38,4 +38,8 @@ extension UIColor {
     static var navBarTitle: UIColor {
         return .white
     }
+
+    static var loadingActivityIndicatorView: UIColor {
+        return .darkText
+    }
 }
