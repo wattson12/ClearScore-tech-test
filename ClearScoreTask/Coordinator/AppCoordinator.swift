@@ -23,8 +23,8 @@ final class AppCoordinator: Coordinator {
     }
 
     func start() {
-        let rootViewController = UIViewController()
-        let rootNavigationController = UINavigationController(rootViewController: rootViewController)
+        let creditScoreViewController = CreditScoreViewController()
+        let rootNavigationController = UINavigationController(rootViewController: creditScoreViewController)
 
         window.rootViewController = rootNavigationController
         window.backgroundColor = .white
