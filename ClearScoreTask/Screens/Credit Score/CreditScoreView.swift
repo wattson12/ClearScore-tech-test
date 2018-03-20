@@ -31,20 +31,19 @@ final class CircularBorderView: BaseView {
 
 final class CreditScoreView: BaseView {
 
-    let outerBorderView = CircularBorderView(borderColor: .black)
+    let outerBorderView = CircularBorderView(borderColor: .outerCircle)
 
     let creditScoreLabel: UILabel = {
         let creditScoreLabel = UILabel()
         creditScoreLabel.translatesAutoresizingMaskIntoConstraints = false
         creditScoreLabel.textAlignment = .center
-        creditScoreLabel.text = "500"
         return creditScoreLabel
     }()
 
     override init() {
         super.init()
 
-        self.backgroundColor = .random
+        self.backgroundColor = .background
 
         self.addSubview(outerBorderView)
         self.addSubview(creditScoreLabel)

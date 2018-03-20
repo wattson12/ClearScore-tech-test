@@ -27,7 +27,7 @@ final class AppCoordinator: Coordinator {
         let rootNavigationController = UINavigationController(rootViewController: creditScoreViewController)
 
         window.rootViewController = rootNavigationController
-        window.backgroundColor = .white
+        window.backgroundColor = .background
 
         window.makeKeyAndVisible()
     }

@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+//TODO: remove this
 extension UIColor {
 
     class var random: UIColor {

@@ -14,6 +14,7 @@
 		2207C06120611D720003D828 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2207C06320611D720003D828 /* Localizable.strings */; };
 		2207C06720611E0D0003D828 /* CreditScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207C06620611E0D0003D828 /* CreditScoreViewModel.swift */; };
 		2207C06920611E4D0003D828 /* CreditScoreViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207C06820611E4D0003D828 /* CreditScoreViewModelTests.swift */; };
+		2207C06C2061224A0003D828 /* UIColor+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207C06B2061224A0003D828 /* UIColor+Styles.swift */; };
 		225F0687206102D700E625DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F0686206102D700E625DA /* AppDelegate.swift */; };
 		225F068E206102D700E625DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225F068D206102D700E625DA /* Assets.xcassets */; };
 		225F0691206102D700E625DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225F068F206102D700E625DA /* LaunchScreen.storyboard */; };
@@ -67,6 +68,7 @@
 		2207C06220611D720003D828 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2207C06620611E0D0003D828 /* CreditScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreViewModel.swift; sourceTree = "<group>"; };
 		2207C06820611E4D0003D828 /* CreditScoreViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreViewModelTests.swift; sourceTree = "<group>"; };
+		2207C06B2061224A0003D828 /* UIColor+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Styles.swift"; sourceTree = "<group>"; };
 		225F0683206102D700E625DA /* ClearScoreTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearScoreTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		225F0686206102D700E625DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		225F068D206102D700E625DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,6 +159,14 @@
 			path = "Credit Report";
 			sourceTree = "<group>";
 		};
+		2207C06A206122320003D828 /* UI Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2207C06B2061224A0003D828 /* UIColor+Styles.swift */,
+			);
+			path = "UI Helpers";
+			sourceTree = "<group>";
+		};
 		225F067A206102D700E625DA = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +196,7 @@
 				225F06C320610EC900E625DA /* Model */,
 				225F06D82061144E00E625DA /* API */,
 				225F06B52061066C00E625DA /* Coordinator */,
+				2207C06A206122320003D828 /* UI Helpers */,
 				225F06BA2061084C00E625DA /* Screens */,
 				225F0686206102D700E625DA /* AppDelegate.swift */,
 				225F068D206102D700E625DA /* Assets.xcassets */,
@@ -644,6 +655,7 @@
 				225F06D7206112AA00E625DA /* CreditScoreView.swift in Sources */,
 				225F06B72061067C00E625DA /* AppCoordinator.swift in Sources */,
 				225F06DA2061145E00E625DA /* DataProvider.swift in Sources */,
+				2207C06C2061224A0003D828 /* UIColor+Styles.swift in Sources */,
 				2207C06720611E0D0003D828 /* CreditScoreViewModel.swift in Sources */,
 				225F06DC2061147E00E625DA /* URL+Creation.swift in Sources */,
 				225F06BE2061089000E625DA /* BaseViewController.swift in Sources */,
