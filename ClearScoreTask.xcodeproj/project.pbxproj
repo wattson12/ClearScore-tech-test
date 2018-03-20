@@ -18,10 +18,11 @@
 		2207C06F2061255E0003D828 /* GradientCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207C06E2061255E0003D828 /* GradientCircleView.swift */; };
 		2207C0712061257F0003D828 /* CircularBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207C0702061257F0003D828 /* CircularBorderView.swift */; };
 		2207C07320612ACE0003D828 /* UIFont+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207C07220612ACE0003D828 /* UIFont+Styles.swift */; };
+		2207C07620612F6D0003D828 /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207C07520612F6D0003D828 /* Testing.swift */; };
+		2207C079206130AE0003D828 /* full_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 2207C078206130AE0003D828 /* full_response.json */; };
 		225F0687206102D700E625DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F0686206102D700E625DA /* AppDelegate.swift */; };
 		225F068E206102D700E625DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225F068D206102D700E625DA /* Assets.xcassets */; };
 		225F0691206102D700E625DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225F068F206102D700E625DA /* LaunchScreen.storyboard */; };
-		225F069C206102D800E625DA /* ClearScoreTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F069B206102D800E625DA /* ClearScoreTaskTests.swift */; };
 		225F06A7206102D800E625DA /* ClearScoreTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F06A6206102D800E625DA /* ClearScoreTaskUITests.swift */; };
 		225F06B72061067C00E625DA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F06B62061067C00E625DA /* AppCoordinator.swift */; };
 		225F06B9206106A700E625DA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F06B8206106A700E625DA /* Coordinator.swift */; };
@@ -75,13 +76,14 @@
 		2207C06E2061255E0003D828 /* GradientCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientCircleView.swift; sourceTree = "<group>"; };
 		2207C0702061257F0003D828 /* CircularBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularBorderView.swift; sourceTree = "<group>"; };
 		2207C07220612ACE0003D828 /* UIFont+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Styles.swift"; sourceTree = "<group>"; };
+		2207C07520612F6D0003D828 /* Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
+		2207C078206130AE0003D828 /* full_response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = full_response.json; sourceTree = "<group>"; };
 		225F0683206102D700E625DA /* ClearScoreTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearScoreTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		225F0686206102D700E625DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		225F068D206102D700E625DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		225F0690206102D700E625DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		225F0692206102D700E625DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		225F0697206102D700E625DA /* ClearScoreTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClearScoreTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		225F069B206102D800E625DA /* ClearScoreTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearScoreTaskTests.swift; sourceTree = "<group>"; };
 		225F069D206102D800E625DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		225F06A2206102D800E625DA /* ClearScoreTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClearScoreTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		225F06A6206102D800E625DA /* ClearScoreTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearScoreTaskUITests.swift; sourceTree = "<group>"; };
@@ -184,6 +186,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		2207C07420612F5C0003D828 /* Test Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2207C07520612F6D0003D828 /* Testing.swift */,
+			);
+			path = "Test Helpers";
+			sourceTree = "<group>";
+		};
+		2207C077206130900003D828 /* Stubbed data */ = {
+			isa = PBXGroup;
+			children = (
+				2207C078206130AE0003D828 /* full_response.json */,
+			);
+			path = "Stubbed data";
+			sourceTree = "<group>";
+		};
 		225F067A206102D700E625DA = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +227,7 @@
 		225F0685206102D700E625DA /* ClearScoreTask */ = {
 			isa = PBXGroup;
 			children = (
+				2207C07420612F5C0003D828 /* Test Helpers */,
 				2207C05E20611D5A0003D828 /* Localization */,
 				225F06C320610EC900E625DA /* Model */,
 				225F06D82061144E00E625DA /* API */,
@@ -230,7 +249,6 @@
 				225F06C820610F6600E625DA /* Model */,
 				225F06DD206114C100E625DA /* API */,
 				2207C06420611DF00003D828 /* Screens */,
-				225F069B206102D800E625DA /* ClearScoreTaskTests.swift */,
 				225F069D206102D800E625DA /* Info.plist */,
 			);
 			path = ClearScoreTaskTests;
@@ -314,6 +332,7 @@
 		225F06D82061144E00E625DA /* API */ = {
 			isa = PBXGroup;
 			children = (
+				2207C077206130900003D828 /* Stubbed data */,
 				225F06D92061145E00E625DA /* DataProvider.swift */,
 				225F06DB2061147E00E625DA /* URL+Creation.swift */,
 				225F06E02061152F00E625DA /* Observable+Conversion.swift */,
@@ -475,6 +494,7 @@
 				225F0691206102D700E625DA /* LaunchScreen.storyboard in Resources */,
 				2207C06120611D720003D828 /* Localizable.strings in Resources */,
 				225F068E206102D700E625DA /* Assets.xcassets in Resources */,
+				2207C079206130AE0003D828 /* full_response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,6 +705,7 @@
 				225F0687206102D700E625DA /* AppDelegate.swift in Sources */,
 				225F06C520610EE300E625DA /* APIResult.swift in Sources */,
 				2207C06F2061255E0003D828 /* GradientCircleView.swift in Sources */,
+				2207C07620612F6D0003D828 /* Testing.swift in Sources */,
 				225F06B9206106A700E625DA /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -698,7 +719,6 @@
 				2207C05D20611A870003D828 /* StateTests.swift in Sources */,
 				225F06DF206114D600E625DA /* URL+CreationTests.swift in Sources */,
 				225F06CF20610FAD00E625DA /* TestFixtureHelpers.swift in Sources */,
-				225F069C206102D800E625DA /* ClearScoreTaskTests.swift in Sources */,
 				2207C0592061162F0003D828 /* Observable+ConversionTests.swift in Sources */,
 				225F06D1206111CB00E625DA /* APIResultTests.swift in Sources */,
 			);
