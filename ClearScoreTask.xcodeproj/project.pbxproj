@@ -23,6 +23,8 @@
 		225F06CA20610F7600E625DA /* CreditReportInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F06C920610F7600E625DA /* CreditReportInfoTests.swift */; };
 		225F06CD20610F9500E625DA /* credit_report_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 225F06CC20610F9500E625DA /* credit_report_info.json */; };
 		225F06CF20610FAD00E625DA /* TestFixtureHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F06CE20610FAD00E625DA /* TestFixtureHelpers.swift */; };
+		225F06D1206111CB00E625DA /* APIResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F06D0206111CB00E625DA /* APIResultTests.swift */; };
+		225F06D32061120B00E625DA /* full_api_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 225F06D22061120B00E625DA /* full_api_response.json */; };
 		AE2940420C0A720892C31F49 /* Pods_ClearScoreTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB951EC9D453D68218E4C92F /* Pods_ClearScoreTaskTests.framework */; };
 		DC621C95E29E89630BB5AD4A /* Pods_ClearScoreTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 365577A9ED5707401E4950FA /* Pods_ClearScoreTaskUITests.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +70,8 @@
 		225F06C920610F7600E625DA /* CreditReportInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditReportInfoTests.swift; sourceTree = "<group>"; };
 		225F06CC20610F9500E625DA /* credit_report_info.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = credit_report_info.json; sourceTree = "<group>"; };
 		225F06CE20610FAD00E625DA /* TestFixtureHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFixtureHelpers.swift; sourceTree = "<group>"; };
+		225F06D0206111CB00E625DA /* APIResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResultTests.swift; sourceTree = "<group>"; };
+		225F06D22061120B00E625DA /* full_api_response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = full_api_response.json; sourceTree = "<group>"; };
 		365577A9ED5707401E4950FA /* Pods_ClearScoreTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClearScoreTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		382B7F6E5F12A29E571CBE55 /* Pods-ClearScoreTaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearScoreTaskUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClearScoreTaskUITests/Pods-ClearScoreTaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		43B9826B139B94E0ACD57D15 /* Pods-ClearScoreTaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearScoreTaskUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClearScoreTaskUITests/Pods-ClearScoreTaskUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				225F06C920610F7600E625DA /* CreditReportInfoTests.swift */,
+				225F06D0206111CB00E625DA /* APIResultTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				225F06CC20610F9500E625DA /* credit_report_info.json */,
+				225F06D22061120B00E625DA /* full_api_response.json */,
 				225F06CE20610FAD00E625DA /* TestFixtureHelpers.swift */,
 			);
 			path = "Test Fixtures";
@@ -371,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				225F06D32061120B00E625DA /* full_api_response.json in Resources */,
 				225F06CD20610F9500E625DA /* credit_report_info.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +580,7 @@
 				225F06CA20610F7600E625DA /* CreditReportInfoTests.swift in Sources */,
 				225F06CF20610FAD00E625DA /* TestFixtureHelpers.swift in Sources */,
 				225F069C206102D800E625DA /* ClearScoreTaskTests.swift in Sources */,
+				225F06D1206111CB00E625DA /* APIResultTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
