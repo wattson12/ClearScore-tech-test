@@ -65,12 +65,13 @@ class CreditScoreViewController: BaseViewController {
             .creditReport
             .subscribe(onNext: { [unowned self] state in
                 switch state {
+                case .initial: break
                 case .loading:
                     self.setViewToLoadingState()
                 case .success(let creditReportInfo):
                     self.configureView(withCreditReportInfo: creditReportInfo)
-                default:
-                    break
+                case .error(let error):
+                    self.configureView(withError: error)
                 }
             })
             .disposed(by: disposeBag)
@@ -90,8 +91,20 @@ class CreditScoreViewController: BaseViewController {
     private func configureView(withCreditReportInfo creditReportInfo: CreditReportInfo) {
 
         let scoreString = NSAttributedString(string: creditReportInfo.score.description)
+        let totalString = NSAttributedString(
+            string: String(format: NSLocalizedString("total_possible_score_format", comment: "Format string when showing possible score"), arguments: [creditReportInfo.maxScoreValue])
+        )
         let progress = CGFloat(creditReportInfo.score) / CGFloat(creditReportInfo.maxScoreValue - creditReportInfo.minScoreValue)
 
-        creditScoreView.viewState = .loaded(score: scoreString, progress: progress)
+        creditScoreView.viewState = .loaded(
+            score: scoreString,
+            possibleTotal: totalString,
+            progress: progress
+        )
+    }
+
+    private func configureView(withError error: Error) {
+        let errorString = NSAttributedString(string: NSLocalizedString("generic_error_message", comment: "Error message for all errors when fetching score"))
+        creditScoreView.viewState = .error(error: errorString)
     }
 }

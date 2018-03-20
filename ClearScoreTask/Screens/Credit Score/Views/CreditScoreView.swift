@@ -15,7 +15,7 @@ final class CreditScoreView: BaseView {
     enum ViewState {
         case initial
         case loading
-        case loaded(score: NSAttributedString, progress: CGFloat)
+        case loaded(score: NSAttributedString, possibleTotal: NSAttributedString, progress: CGFloat)
         case error(error: NSAttributedString)
     }
 
@@ -28,11 +28,29 @@ final class CreditScoreView: BaseView {
     private let outerBorderView = CircularBorderView(borderColor: .outerCircle)
     private let innerGradientView = GradientCircleView(colors: [.black, .red, .blue, .green])
 
-    private let creditScoreLabel: UILabel = {
-        let creditScoreLabel = UILabel()
-        creditScoreLabel.translatesAutoresizingMaskIntoConstraints = false
-        creditScoreLabel.textAlignment = .center
-        return creditScoreLabel
+    private let topLabel: UILabel = {
+        let topLabel = UILabel()
+        topLabel.translatesAutoresizingMaskIntoConstraints = false
+        topLabel.textAlignment = .center
+        topLabel.font = .creditScoreSupplementary
+        topLabel.text = NSLocalizedString("credit_score_header", comment: "Header when showing credit score")
+        return topLabel
+    }()
+
+    private let centerLabel: UILabel = {
+        let centerLabel = UILabel()
+        centerLabel.translatesAutoresizingMaskIntoConstraints = false
+        centerLabel.textAlignment = .center
+        centerLabel.font = .creditScore
+        return centerLabel
+    }()
+
+    private let bottomLabel: UILabel = {
+        let bottomLabel = UILabel()
+        bottomLabel.translatesAutoresizingMaskIntoConstraints = false
+        bottomLabel.textAlignment = .center
+        bottomLabel.font = .creditScoreSupplementary
+        return bottomLabel
     }()
 
     private let activityIndicatorView: UIActivityIndicatorView = {
@@ -50,7 +68,9 @@ final class CreditScoreView: BaseView {
 
         self.addSubview(outerBorderView)
         self.addSubview(innerGradientView)
-        self.addSubview(creditScoreLabel)
+        self.addSubview(topLabel)
+        self.addSubview(centerLabel)
+        self.addSubview(bottomLabel)
         self.addSubview(activityIndicatorView)
 
         //outer view is centered in the screen, square (/circular once corner radius is applied), and within the size of the view
@@ -77,9 +97,20 @@ final class CreditScoreView: BaseView {
 
         //credit score label is kept in the center of the outer view
         NSLayoutConstraint.activate([
-            creditScoreLabel.centerXAnchor.constraint(equalTo: outerBorderView.centerXAnchor),
-            creditScoreLabel.centerYAnchor.constraint(equalTo: outerBorderView.centerYAnchor),
-            creditScoreLabel.widthAnchor.constraint(lessThanOrEqualTo: outerBorderView.widthAnchor, multiplier: 0.8)
+            centerLabel.centerXAnchor.constraint(equalTo: outerBorderView.centerXAnchor),
+            centerLabel.centerYAnchor.constraint(equalTo: outerBorderView.centerYAnchor),
+            centerLabel.widthAnchor.constraint(lessThanOrEqualTo: outerBorderView.widthAnchor, multiplier: 0.8)
+        ])
+
+        //top and bottom labels are set above and below the credit score respectively
+        NSLayoutConstraint.activate([
+            topLabel.centerXAnchor.constraint(equalTo: outerBorderView.centerXAnchor),
+            topLabel.widthAnchor.constraint(lessThanOrEqualTo: outerBorderView.widthAnchor, multiplier: 0.6),
+            topLabel.bottomAnchor.constraint(equalTo: centerLabel.topAnchor, constant: -10),
+
+            bottomLabel.centerXAnchor.constraint(equalTo: outerBorderView.centerXAnchor),
+            bottomLabel.widthAnchor.constraint(lessThanOrEqualTo: outerBorderView.widthAnchor, multiplier: 0.6),
+            bottomLabel.topAnchor.constraint(equalTo: centerLabel.bottomAnchor, constant: 10)
         ])
 
         //activity indicator view pinned to center as well
@@ -91,24 +122,38 @@ final class CreditScoreView: BaseView {
 
     private func configureForCurrentViewState() {
         switch viewState {
-        case .initial: break //handled on initialisation
+        case .initial:
+            //hide all views
+            topLabel.isHidden = true
+            centerLabel.isHidden = true
+            bottomLabel.isHidden = true
+            activityIndicatorView.stopAnimating()
 
         case .loading:
-            activityIndicatorView.startAnimating()
-            creditScoreLabel.isHidden = true
+            topLabel.isHidden = true
+            centerLabel.isHidden = true
+            bottomLabel.isHidden = true
 
-        case .loaded(let scoreString, let progress):
-            //remove spinner and restore view
+            activityIndicatorView.startAnimating()
+
+        case .loaded(let scoreString, let possibleString, let progress):
+            topLabel.isHidden = false
+            centerLabel.isHidden = false
+            bottomLabel.isHidden = false
             activityIndicatorView.stopAnimating()
-            creditScoreLabel.isHidden = false
 
             //then set loaded values
-            creditScoreLabel.attributedText = scoreString
+            centerLabel.attributedText = scoreString
+            bottomLabel.attributedText = possibleString
             innerGradientView.setProgress(progress, animated: true)
-            
-        case .error:
+
+        case .error(let errorString):
+            topLabel.isHidden = true
+            centerLabel.isHidden = false
+            bottomLabel.isHidden = true
             activityIndicatorView.stopAnimating()
-            break //TODO: handling
+
+            centerLabel.attributedText = errorString
         }
     }
 }

@@ -7,3 +7,6 @@
 */
 
 "credit_report_view_title" = "Dashboard";
+"generic_error_message" = "Unknown error :(";
+"credit_score_header" = "Your credit score is";
+"total_possible_score_format" = "out of %i";
