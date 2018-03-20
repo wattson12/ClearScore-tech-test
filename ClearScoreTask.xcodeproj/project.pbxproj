@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20911CE2F008745E79923862 /* Pods_ClearScoreTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC528E9EA8D39897A2FB52 /* Pods_ClearScoreTask.framework */; };
+		2207C0592061162F0003D828 /* Observable+ConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207C0582061162F0003D828 /* Observable+ConversionTests.swift */; };
 		225F0687206102D700E625DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F0686206102D700E625DA /* AppDelegate.swift */; };
 		225F068E206102D700E625DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225F068D206102D700E625DA /* Assets.xcassets */; };
 		225F0691206102D700E625DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225F068F206102D700E625DA /* LaunchScreen.storyboard */; };
@@ -27,6 +28,10 @@
 		225F06D32061120B00E625DA /* full_api_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 225F06D22061120B00E625DA /* full_api_response.json */; };
 		225F06D52061125800E625DA /* full_api_response_without_credit_report_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 225F06D42061125800E625DA /* full_api_response_without_credit_report_info.json */; };
 		225F06D7206112AA00E625DA /* CreditScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F06D6206112AA00E625DA /* CreditScoreView.swift */; };
+		225F06DA2061145E00E625DA /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F06D92061145E00E625DA /* DataProvider.swift */; };
+		225F06DC2061147E00E625DA /* URL+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F06DB2061147E00E625DA /* URL+Creation.swift */; };
+		225F06DF206114D600E625DA /* URL+CreationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F06DE206114D600E625DA /* URL+CreationTests.swift */; };
+		225F06E12061152F00E625DA /* Observable+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F06E02061152F00E625DA /* Observable+Conversion.swift */; };
 		AE2940420C0A720892C31F49 /* Pods_ClearScoreTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB951EC9D453D68218E4C92F /* Pods_ClearScoreTaskTests.framework */; };
 		DC621C95E29E89630BB5AD4A /* Pods_ClearScoreTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 365577A9ED5707401E4950FA /* Pods_ClearScoreTaskUITests.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +56,7 @@
 /* Begin PBXFileReference section */
 		1582ECADDB0D1C76541EBB6B /* Pods-ClearScoreTaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearScoreTaskTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClearScoreTaskTests/Pods-ClearScoreTaskTests.release.xcconfig"; sourceTree = "<group>"; };
 		2063B6ECF7B1099F4663A9DA /* Pods-ClearScoreTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearScoreTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClearScoreTask/Pods-ClearScoreTask.debug.xcconfig"; sourceTree = "<group>"; };
+		2207C0582061162F0003D828 /* Observable+ConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+ConversionTests.swift"; sourceTree = "<group>"; };
 		225F0683206102D700E625DA /* ClearScoreTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearScoreTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		225F0686206102D700E625DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		225F068D206102D700E625DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +82,10 @@
 		225F06D22061120B00E625DA /* full_api_response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = full_api_response.json; sourceTree = "<group>"; };
 		225F06D42061125800E625DA /* full_api_response_without_credit_report_info.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = full_api_response_without_credit_report_info.json; sourceTree = "<group>"; };
 		225F06D6206112AA00E625DA /* CreditScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreView.swift; sourceTree = "<group>"; };
+		225F06D92061145E00E625DA /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		225F06DB2061147E00E625DA /* URL+Creation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Creation.swift"; sourceTree = "<group>"; };
+		225F06DE206114D600E625DA /* URL+CreationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+CreationTests.swift"; sourceTree = "<group>"; };
+		225F06E02061152F00E625DA /* Observable+Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Conversion.swift"; sourceTree = "<group>"; };
 		365577A9ED5707401E4950FA /* Pods_ClearScoreTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClearScoreTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		382B7F6E5F12A29E571CBE55 /* Pods-ClearScoreTaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearScoreTaskUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClearScoreTaskUITests/Pods-ClearScoreTaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		43B9826B139B94E0ACD57D15 /* Pods-ClearScoreTaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearScoreTaskUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClearScoreTaskUITests/Pods-ClearScoreTaskUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				225F06C320610EC900E625DA /* Model */,
+				225F06D82061144E00E625DA /* API */,
 				225F06B52061066C00E625DA /* Coordinator */,
 				225F06BA2061084C00E625DA /* Screens */,
 				225F0686206102D700E625DA /* AppDelegate.swift */,
@@ -154,6 +165,7 @@
 			children = (
 				225F06CB20610F8400E625DA /* Test Fixtures */,
 				225F06C820610F6600E625DA /* Model */,
+				225F06DD206114C100E625DA /* API */,
 				225F069B206102D800E625DA /* ClearScoreTaskTests.swift */,
 				225F069D206102D800E625DA /* Info.plist */,
 			);
@@ -232,6 +244,25 @@
 				225F06CE20610FAD00E625DA /* TestFixtureHelpers.swift */,
 			);
 			path = "Test Fixtures";
+			sourceTree = "<group>";
+		};
+		225F06D82061144E00E625DA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				225F06D92061145E00E625DA /* DataProvider.swift */,
+				225F06DB2061147E00E625DA /* URL+Creation.swift */,
+				225F06E02061152F00E625DA /* Observable+Conversion.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		225F06DD206114C100E625DA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				225F06DE206114D600E625DA /* URL+CreationTests.swift */,
+				2207C0582061162F0003D828 /* Observable+ConversionTests.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		674632DCD958DB3C2BB35910 /* Frameworks */ = {
@@ -569,8 +600,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				225F06E12061152F00E625DA /* Observable+Conversion.swift in Sources */,
 				225F06D7206112AA00E625DA /* CreditScoreView.swift in Sources */,
 				225F06B72061067C00E625DA /* AppCoordinator.swift in Sources */,
+				225F06DA2061145E00E625DA /* DataProvider.swift in Sources */,
+				225F06DC2061147E00E625DA /* URL+Creation.swift in Sources */,
 				225F06BE2061089000E625DA /* BaseViewController.swift in Sources */,
 				225F06C0206108FE00E625DA /* CreditScoreViewController.swift in Sources */,
 				225F06C220610CF400E625DA /* BaseView.swift in Sources */,
@@ -586,8 +620,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				225F06CA20610F7600E625DA /* CreditReportInfoTests.swift in Sources */,
+				225F06DF206114D600E625DA /* URL+CreationTests.swift in Sources */,
 				225F06CF20610FAD00E625DA /* TestFixtureHelpers.swift in Sources */,
 				225F069C206102D800E625DA /* ClearScoreTaskTests.swift in Sources */,
+				2207C0592061162F0003D828 /* Observable+ConversionTests.swift in Sources */,
 				225F06D1206111CB00E625DA /* APIResultTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

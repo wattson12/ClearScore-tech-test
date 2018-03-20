@@ -30,19 +30,6 @@ extension NSLayoutConstraint {
     }
 }
 
-//this is an abstraction around URLSession which will help testing view models
-protocol DataProvider {
-    func fetchData(fromURL url: URL) -> Observable<Data>
-}
-
-//URLSession is the easiest way, build on existing Rx extensions to add conformance
-extension URLSession: DataProvider {
-
-    func fetchData(fromURL url: URL) -> Observable<Data> {
-        return self.rx.data(request: URLRequest(url: url))
-    }
-}
-
 enum State<T> {
     case initial
     case loading
@@ -62,14 +49,16 @@ final class CreditScoreViewModel {
         self.dataProvider = dataProvider
     }
 
-    func fetchMovies() {
+    func fetchCreditScore() {
+        creditReport.accept(.loading)
 
-//        dataProvider
-//            .fetchData(fromURL: .movieList)
-//            .convertToAPIResult(holdingType: Movie.self)
-//            .catchErrorJustReturn([]) //TODO: Nicer error handling
-//            .bind(to: movies)
-//            .disposed(by: disposeBag)
+        dataProvider
+            .fetchData(fromURL: .mockCredit)
+            .convertToCreditReportInfo()
+            .map { State<CreditReportInfo>.success($0) }
+            .catchError { return Observable.just(State<CreditReportInfo>.error($0)) }
+            .bind(to: creditReport)
+            .disposed(by: disposeBag)
     }
 }
 
@@ -92,8 +81,14 @@ class CreditScoreViewController: BaseViewController {
         setupBindings()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        viewModel.fetchCreditScore()
+    }
+
     private func setupBindings() {
-        
+
         viewModel
             .creditReport
             .subscribe(onNext: { state in
