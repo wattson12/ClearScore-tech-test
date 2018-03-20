@@ -19,7 +19,7 @@ final class CreditScoreViewModel {
     let creditReport: BehaviorRelay<State<CreditReportInfo>> = BehaviorRelay(value: .initial)
     let title: BehaviorRelay<String> = BehaviorRelay(value: "credit_report_view_title")
 
-    init(dataProvider: DataProvider = URLSession.shared) {
+    init(dataProvider: DataProvider = defaultDataProvider()) {
         self.dataProvider = dataProvider
     }
 
@@ -30,8 +30,6 @@ final class CreditScoreViewModel {
             .fetchData(fromURL: .mockCredit)
             .convertToCreditReportInfo()
             .wrapInState() //convert to a state type so we can bind to the credit report relay
-//            .map { _ in return State<CreditReportInfo>.error(NSError.init(domain: #file, code: #line, userInfo: nil)) } //TODO: remove this
-            .delay(3, scheduler: MainScheduler.instance) //debugging view //TODO: remove this
             .observeOn(MainScheduler.instance) //UI triggers are based off of the creditReport relay so move back to main thread here
             .bind(to: creditReport)
             .disposed(by: disposeBag)

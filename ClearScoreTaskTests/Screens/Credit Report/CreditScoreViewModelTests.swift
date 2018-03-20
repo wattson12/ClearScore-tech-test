@@ -11,28 +11,12 @@ import XCTest
 import RxSwift
 import RxCocoa
 
-struct NoOpDataProvider: DataProvider {
-
-    func fetchData(fromURL url: URL) -> Observable<Data> {
-        return .never()
-    }
-}
-
 struct MockDataProvider: DataProvider {
 
     let data: Data
 
     func fetchData(fromURL url: URL) -> Observable<Data> {
         return .just(data)
-    }
-}
-
-struct FailingDataProvider: DataProvider {
-
-    let error: Error
-
-    func fetchData(fromURL url: URL) -> Observable<Data> {
-        return .error(error)
     }
 }
 

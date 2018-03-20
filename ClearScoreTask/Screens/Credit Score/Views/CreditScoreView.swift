@@ -60,6 +60,7 @@ final class CreditScoreView: BaseView {
         activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
         activityIndicatorView.color = .loadingActivityIndicatorView
         activityIndicatorView.hidesWhenStopped = true
+        activityIndicatorView.accessibilityIdentifier = "loading_indicator"
         return activityIndicatorView
     }()
 
@@ -120,6 +121,8 @@ final class CreditScoreView: BaseView {
             activityIndicatorView.centerXAnchor.constraint(equalTo: outerBorderView.centerXAnchor),
             activityIndicatorView.centerYAnchor.constraint(equalTo: outerBorderView.centerYAnchor)
         ])
+
+        configureForCurrentViewState()
     }
 
     private func configureForCurrentViewState() {
