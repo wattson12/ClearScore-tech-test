@@ -11,6 +11,15 @@ import XCTest
 import RxSwift
 import RxCocoa
 
+struct MockDataProvider: DataProvider {
+
+    let data: Data
+
+    func fetchData(fromURL url: URL) -> Observable<Data> {
+        return .just(data)
+    }
+}
+
 class CreditScoreViewModelTests: XCTestCase {
 
     let disposeBag = DisposeBag()

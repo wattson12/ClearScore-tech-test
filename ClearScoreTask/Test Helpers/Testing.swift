@@ -26,6 +26,7 @@ extension Testing {
     enum Scenario {
         case mockedFullResponse
         case mockedError
+        case indefiniteLoading
     }
 
     static var uiTestingScenario: Scenario? {
@@ -33,6 +34,8 @@ extension Testing {
 
         if launchArgumentsContains("ui_testing_scenario_mocked_error") {
             return .mockedError
+        } else if launchArgumentsContains("ui_testing_scenario_indefinite_loading") {
+            return .indefiniteLoading
         } else {
             return .mockedFullResponse //default to mocking a full response if possible
         }

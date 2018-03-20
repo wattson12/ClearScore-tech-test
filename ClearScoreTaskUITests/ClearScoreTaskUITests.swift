@@ -28,5 +28,19 @@ class ClearScoreTaskUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["514"].waitForExistence(timeout: 0.5))
         XCTAssertTrue(app.staticTexts["out of 700"].waitForExistence(timeout: 0.5))
     }
+
+    func testErrorMessageIsShownOnFailure() {
+        app.launchArguments += ["ui_testing_scenario_mocked_error"]
+        app.launch()
+
+        XCTAssertTrue(app.staticTexts["Unknown error :("].waitForExistence(timeout: 0.5))
+    }
+
+    func testLoadingStateIsShownWhileWaitingForResponse() {
+        app.launchArguments += ["ui_testing_scenario_indefinite_loading"]
+        app.launch()
+
+        XCTAssertTrue(app.activityIndicators["loading_indicator"].waitForExistence(timeout: 0.5))
+    }
     
 }

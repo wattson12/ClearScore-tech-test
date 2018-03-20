@@ -30,9 +30,11 @@ func defaultDataProvider(scenario: Testing.Scenario? = Testing.uiTestingScenario
 
     switch scenario {
     case .mockedFullResponse:
-        return MockDataProvider(dataFileName: "full_response")
+        return MockDataProviderFromFile(dataFileName: "full_response")
     case .mockedError:
         return FailingDataProvider(error: NSError(domain: #file, code: #line, userInfo: nil))
+    case .indefiniteLoading:
+        return NoOpDataProvider()
     }
 }
 
@@ -45,7 +47,7 @@ struct NoOpDataProvider: DataProvider {
 }
 
 //data provider which returns data from the given file name
-struct MockDataProvider: DataProvider {
+struct MockDataProviderFromFile: DataProvider {
 
     let dataFileName: String
 

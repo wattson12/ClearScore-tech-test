@@ -10,28 +10,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-//TODO: remove this
-extension UIColor {
-
-    class var random: UIColor {
-
-        let hue = ( Double(Double(arc4random()).truncatingRemainder(dividingBy: 256.0) ) / 256.0 )
-        let saturation = ( (Double(arc4random()).truncatingRemainder(dividingBy: 128)) / 256.0 ) + 0.5
-        let brightness = ( (Double(arc4random()).truncatingRemainder(dividingBy: 128)) / 256.0 ) + 0.5
-
-        return UIColor(hue: CGFloat(hue), saturation: CGFloat(saturation), brightness: CGFloat(brightness), alpha: 1.0)
-    }
-}
-
-//TODO: move this
-extension NSLayoutConstraint {
-
-    func withPriority(_ priority: UILayoutPriority) -> NSLayoutConstraint {
-        self.priority = priority
-        return self
-    }
-}
-
 class CreditScoreViewController: BaseViewController {
 
     private let viewModel: CreditScoreViewModel
@@ -90,7 +68,9 @@ class CreditScoreViewController: BaseViewController {
 
     private func configureView(withCreditReportInfo creditReportInfo: CreditReportInfo) {
 
-        let scoreString = NSAttributedString(string: creditReportInfo.score.description)
+        let scoreString = NSAttributedString(string: creditReportInfo.score.description, attributes: [
+            .foregroundColor: UIColor.creditScore
+        ])
         let totalString = NSAttributedString(
             string: String(format: NSLocalizedString("total_possible_score_format", comment: "Format string when showing possible score"), arguments: [creditReportInfo.maxScoreValue])
         )

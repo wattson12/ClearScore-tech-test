@@ -20,7 +20,7 @@ extension UIColor {
     }
 
     static var creditScore: UIColor {
-        return .random
+        return .orange
     }
 
     static var outerCircle: UIColor {
@@ -28,7 +28,7 @@ extension UIColor {
     }
 
     static var innerCircle: UIColor {
-        return .random
+        return .orange
     }
 
     static var navBarBackground: UIColor {
