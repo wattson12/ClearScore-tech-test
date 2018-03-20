@@ -11,6 +11,9 @@
 		2207C0592061162F0003D828 /* Observable+ConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207C0582061162F0003D828 /* Observable+ConversionTests.swift */; };
 		2207C05B2061197B0003D828 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207C05A2061197B0003D828 /* State.swift */; };
 		2207C05D20611A870003D828 /* StateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207C05C20611A870003D828 /* StateTests.swift */; };
+		2207C06120611D720003D828 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2207C06320611D720003D828 /* Localizable.strings */; };
+		2207C06720611E0D0003D828 /* CreditScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207C06620611E0D0003D828 /* CreditScoreViewModel.swift */; };
+		2207C06920611E4D0003D828 /* CreditScoreViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207C06820611E4D0003D828 /* CreditScoreViewModelTests.swift */; };
 		225F0687206102D700E625DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F0686206102D700E625DA /* AppDelegate.swift */; };
 		225F068E206102D700E625DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225F068D206102D700E625DA /* Assets.xcassets */; };
 		225F0691206102D700E625DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225F068F206102D700E625DA /* LaunchScreen.storyboard */; };
@@ -61,6 +64,9 @@
 		2207C0582061162F0003D828 /* Observable+ConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+ConversionTests.swift"; sourceTree = "<group>"; };
 		2207C05A2061197B0003D828 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		2207C05C20611A870003D828 /* StateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTests.swift; sourceTree = "<group>"; };
+		2207C06220611D720003D828 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2207C06620611E0D0003D828 /* CreditScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreViewModel.swift; sourceTree = "<group>"; };
+		2207C06820611E4D0003D828 /* CreditScoreViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreViewModelTests.swift; sourceTree = "<group>"; };
 		225F0683206102D700E625DA /* ClearScoreTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearScoreTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		225F0686206102D700E625DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		225F068D206102D700E625DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,6 +133,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2207C05E20611D5A0003D828 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				2207C06320611D720003D828 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		2207C06420611DF00003D828 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				2207C06520611DF80003D828 /* Credit Report */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		2207C06520611DF80003D828 /* Credit Report */ = {
+			isa = PBXGroup;
+			children = (
+				2207C06820611E4D0003D828 /* CreditScoreViewModelTests.swift */,
+			);
+			path = "Credit Report";
+			sourceTree = "<group>";
+		};
 		225F067A206102D700E625DA = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +182,7 @@
 		225F0685206102D700E625DA /* ClearScoreTask */ = {
 			isa = PBXGroup;
 			children = (
+				2207C05E20611D5A0003D828 /* Localization */,
 				225F06C320610EC900E625DA /* Model */,
 				225F06D82061144E00E625DA /* API */,
 				225F06B52061066C00E625DA /* Coordinator */,
@@ -170,6 +201,7 @@
 				225F06CB20610F8400E625DA /* Test Fixtures */,
 				225F06C820610F6600E625DA /* Model */,
 				225F06DD206114C100E625DA /* API */,
+				2207C06420611DF00003D828 /* Screens */,
 				225F069B206102D800E625DA /* ClearScoreTaskTests.swift */,
 				225F069D206102D800E625DA /* Info.plist */,
 			);
@@ -207,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				225F06BF206108FE00E625DA /* CreditScoreViewController.swift */,
+				2207C06620611E0D0003D828 /* CreditScoreViewModel.swift */,
 				225F06D6206112AA00E625DA /* CreditScoreView.swift */,
 			);
 			path = "Credit Score";
@@ -412,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				225F0691206102D700E625DA /* LaunchScreen.storyboard in Resources */,
+				2207C06120611D720003D828 /* Localizable.strings in Resources */,
 				225F068E206102D700E625DA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,6 +644,7 @@
 				225F06D7206112AA00E625DA /* CreditScoreView.swift in Sources */,
 				225F06B72061067C00E625DA /* AppCoordinator.swift in Sources */,
 				225F06DA2061145E00E625DA /* DataProvider.swift in Sources */,
+				2207C06720611E0D0003D828 /* CreditScoreViewModel.swift in Sources */,
 				225F06DC2061147E00E625DA /* URL+Creation.swift in Sources */,
 				225F06BE2061089000E625DA /* BaseViewController.swift in Sources */,
 				225F06C0206108FE00E625DA /* CreditScoreViewController.swift in Sources */,
@@ -626,6 +661,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2207C06920611E4D0003D828 /* CreditScoreViewModelTests.swift in Sources */,
 				225F06CA20610F7600E625DA /* CreditReportInfoTests.swift in Sources */,
 				2207C05D20611A870003D828 /* StateTests.swift in Sources */,
 				225F06DF206114D600E625DA /* URL+CreationTests.swift in Sources */,
@@ -660,6 +696,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		2207C06320611D720003D828 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2207C06220611D720003D828 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		225F068F206102D700E625DA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

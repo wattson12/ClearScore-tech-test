@@ -22,36 +22,12 @@ extension UIColor {
     }
 }
 
+//TODO: move this
 extension NSLayoutConstraint {
 
     func withPriority(_ priority: UILayoutPriority) -> NSLayoutConstraint {
         self.priority = priority
         return self
-    }
-}
-
-final class CreditScoreViewModel {
-
-    let disposeBag = DisposeBag()
-
-    let dataProvider: DataProvider
-
-    let creditReport: BehaviorRelay<State<CreditReportInfo>> = BehaviorRelay(value: .initial)
-
-    init(dataProvider: DataProvider = URLSession.shared) {
-        self.dataProvider = dataProvider
-    }
-
-    func fetchCreditScore() {
-        creditReport.accept(.loading)
-
-        dataProvider
-            .fetchData(fromURL: .mockCredit)
-            .convertToCreditReportInfo()
-            .wrapInState() //convert to a state type so we can bind to the credit report relay
-            .observeOn(MainScheduler.instance) //UI triggers are based off of the creditReport relay so move back to main thread here
-            .bind(to: creditReport)
-            .disposed(by: disposeBag)
     }
 }
 
@@ -83,6 +59,7 @@ class CreditScoreViewController: BaseViewController {
 
     private func setupBindings() {
 
+        //observe updates to credit report state in view model
         viewModel
             .creditReport
             .subscribe(onNext: { [unowned self] state in
@@ -93,6 +70,13 @@ class CreditScoreViewController: BaseViewController {
                     break
                 }
             })
+            .disposed(by: disposeBag)
+
+        //bind view model title directly to navigation item title
+        viewModel
+            .title.asObservable()
+            .map { NSLocalizedString($0, comment: "") }
+            .bind(to: self.navigationItem.rx.title)
             .disposed(by: disposeBag)
     }
 
