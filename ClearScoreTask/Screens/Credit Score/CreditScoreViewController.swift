@@ -53,12 +53,21 @@ final class CreditScoreView: BaseView {
 
     let outerBorderView = CircularBorderView(borderColor: .black)
 
+    let creditScoreLabel: UILabel = {
+        let creditScoreLabel = UILabel()
+        creditScoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        creditScoreLabel.textAlignment = .center
+        creditScoreLabel.text = "500"
+        return creditScoreLabel
+    }()
+
     override init() {
         super.init()
 
         self.backgroundColor = .random
 
         self.addSubview(outerBorderView)
+        self.addSubview(creditScoreLabel)
 
         //outer view is centered in the screen, square (/circular once corner radius is applied), and within the size of the view
         NSLayoutConstraint.activate([
@@ -72,6 +81,13 @@ final class CreditScoreView: BaseView {
             outerBorderView.heightAnchor.constraint(lessThanOrEqualTo: self.safeAreaLayoutGuide.heightAnchor, multiplier: 0.9).withPriority(.required),
             outerBorderView.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9).withPriority(.defaultLow),
             outerBorderView.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor, multiplier: 0.9).withPriority(.defaultLow)
+        ])
+
+        //credit score label is kept in the center of the outer view
+        NSLayoutConstraint.activate([
+            creditScoreLabel.centerXAnchor.constraint(equalTo: outerBorderView.centerXAnchor),
+            creditScoreLabel.centerYAnchor.constraint(equalTo: outerBorderView.centerYAnchor),
+            creditScoreLabel.widthAnchor.constraint(lessThanOrEqualTo: outerBorderView.widthAnchor, multiplier: 0.8)
         ])
     }
 }
