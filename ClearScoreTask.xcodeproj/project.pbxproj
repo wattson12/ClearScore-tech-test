@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		20911CE2F008745E79923862 /* Pods_ClearScoreTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EC528E9EA8D39897A2FB52 /* Pods_ClearScoreTask.framework */; };
 		225F0687206102D700E625DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F0686206102D700E625DA /* AppDelegate.swift */; };
-		225F0689206102D700E625DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F0688206102D700E625DA /* ViewController.swift */; };
-		225F068C206102D700E625DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225F068A206102D700E625DA /* Main.storyboard */; };
 		225F068E206102D700E625DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225F068D206102D700E625DA /* Assets.xcassets */; };
 		225F0691206102D700E625DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225F068F206102D700E625DA /* LaunchScreen.storyboard */; };
 		225F069C206102D800E625DA /* ClearScoreTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F069B206102D800E625DA /* ClearScoreTaskTests.swift */; };
@@ -41,8 +39,6 @@
 		2063B6ECF7B1099F4663A9DA /* Pods-ClearScoreTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearScoreTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClearScoreTask/Pods-ClearScoreTask.debug.xcconfig"; sourceTree = "<group>"; };
 		225F0683206102D700E625DA /* ClearScoreTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearScoreTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		225F0686206102D700E625DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		225F0688206102D700E625DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		225F068B206102D700E625DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		225F068D206102D700E625DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		225F0690206102D700E625DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		225F0692206102D700E625DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,8 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				225F0686206102D700E625DA /* AppDelegate.swift */,
-				225F0688206102D700E625DA /* ViewController.swift */,
-				225F068A206102D700E625DA /* Main.storyboard */,
 				225F068D206102D700E625DA /* Assets.xcassets */,
 				225F068F206102D700E625DA /* LaunchScreen.storyboard */,
 				225F0692206102D700E625DA /* Info.plist */,
@@ -284,7 +278,6 @@
 			files = (
 				225F0691206102D700E625DA /* LaunchScreen.storyboard in Resources */,
 				225F068E206102D700E625DA /* Assets.xcassets in Resources */,
-				225F068C206102D700E625DA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +468,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				225F0689206102D700E625DA /* ViewController.swift in Sources */,
 				225F0687206102D700E625DA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,14 +504,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		225F068A206102D700E625DA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				225F068B206102D700E625DA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		225F068F206102D700E625DA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
