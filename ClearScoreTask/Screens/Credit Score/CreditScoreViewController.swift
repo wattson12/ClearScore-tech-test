@@ -83,5 +83,7 @@ class CreditScoreViewController: BaseViewController {
 
     private func configureView(withCreditReportInfo creditReportInfo: CreditReportInfo) {
         creditScoreView.creditScoreLabel.text = creditReportInfo.score.description
+        let progress = CGFloat(creditReportInfo.score) / CGFloat(creditReportInfo.maxScoreValue - creditReportInfo.minScoreValue)
+        creditScoreView.innerGradientView.setProgress(progress, animated: true)
     }
 }
