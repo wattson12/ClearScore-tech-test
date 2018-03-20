@@ -173,6 +173,7 @@
 			buildConfigurationList = 225F06AB206102D800E625DA /* Build configuration list for PBXNativeTarget "ClearScoreTask" */;
 			buildPhases = (
 				BADCBB23FAB59FF5C8C6DA28 /* [CP] Check Pods Manifest.lock */,
+				225F06B4206104A000E625DA /* Run swiftlint */,
 				225F067F206102D700E625DA /* Sources */,
 				225F0680206102D700E625DA /* Frameworks */,
 				225F0681206102D700E625DA /* Resources */,
@@ -318,6 +319,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClearScoreTaskTests/Pods-ClearScoreTaskTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		225F06B4206104A000E625DA /* Run swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run swiftlint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
 		};
 		587ECF1DB1BEA4BF3B1B5E0E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

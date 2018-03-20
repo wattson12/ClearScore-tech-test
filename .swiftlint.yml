@@ -1,0 +1,6 @@
+excluded: # ignoring external code and tests
+  - Pods
+  - ClearScoreTaskTests
+  - ClearScoreTaskUITests
+
+line_length: 200
