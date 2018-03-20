@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import RxSwift
 
 class BaseViewController: UIViewController {
+
+    //Add dispose bag here since most view controllers will use one 
+    let disposeBag = DisposeBag()
 
     //Marking default initialisers as unavable while not needed
     //This saves base classes needing to provide them, and coordinators using them incorrectly

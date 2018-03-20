@@ -23,7 +23,7 @@ final class AppCoordinator: Coordinator {
     }
 
     func start() {
-        let creditScoreViewController = CreditScoreViewController()
+        let creditScoreViewController = CreditScoreViewController(viewModel: CreditScoreViewModel())
         let rootNavigationController = UINavigationController(rootViewController: creditScoreViewController)
 
         window.rootViewController = rootNavigationController

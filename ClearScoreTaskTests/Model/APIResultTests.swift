@@ -32,5 +32,11 @@ class APIResultTests: XCTestCase {
             XCTFail("Unexpected error mapping CreditReportInfo: \(error)")
         }
     }
+
+    func testMappingFailsWhenCreditReportInfoIsMissing() {
+        let data = testData(fromFixtureNamed: "full_api_response_without_credit_report_info")
+        let apiResult = try? JSONDecoder().decode(APIResult.self, from: data)
+        XCTAssertNil(apiResult)
+    }
     
 }
