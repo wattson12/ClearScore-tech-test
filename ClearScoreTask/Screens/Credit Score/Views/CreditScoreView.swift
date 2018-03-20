@@ -33,6 +33,7 @@ final class CreditScoreView: BaseView {
         topLabel.translatesAutoresizingMaskIntoConstraints = false
         topLabel.textAlignment = .center
         topLabel.font = .creditScoreSupplementary
+        topLabel.adjustsFontSizeToFitWidth = true //improve support for smaller devices
         topLabel.text = NSLocalizedString("credit_score_header", comment: "Header when showing credit score")
         return topLabel
     }()
@@ -50,6 +51,7 @@ final class CreditScoreView: BaseView {
         bottomLabel.translatesAutoresizingMaskIntoConstraints = false
         bottomLabel.textAlignment = .center
         bottomLabel.font = .creditScoreSupplementary
+        bottomLabel.adjustsFontSizeToFitWidth = true //improve support for smaller devices
         return bottomLabel
     }()
 
