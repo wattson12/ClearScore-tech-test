@@ -58,6 +58,7 @@ final class CreditScoreViewModel {
 class CreditScoreViewController: BaseViewController {
 
     private let viewModel: CreditScoreViewModel
+    private let creditScoreView = CreditScoreView()
 
     init(viewModel: CreditScoreViewModel) {
         self.viewModel = viewModel
@@ -65,7 +66,7 @@ class CreditScoreViewController: BaseViewController {
     }
 
     override func loadView() {
-        self.view = CreditScoreView()
+        self.view = creditScoreView
     }
 
     override func viewDidLoad() {
@@ -84,10 +85,18 @@ class CreditScoreViewController: BaseViewController {
 
         viewModel
             .creditReport
-            .subscribe(onNext: { state in
-                print(Thread.current)
-                print(state)
+            .subscribe(onNext: { [unowned self] state in
+                switch state {
+                case .success(let creditReportInfo):
+                    self.configureView(withCreditReportInfo: creditReportInfo)
+                default:
+                    break
+                }
             })
             .disposed(by: disposeBag)
+    }
+
+    private func configureView(withCreditReportInfo creditReportInfo: CreditReportInfo) {
+        creditScoreView.creditScoreLabel.text = creditReportInfo.score.description
     }
 }
